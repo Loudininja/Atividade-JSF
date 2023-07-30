@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<h:head>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</h:head>
+
+<h:body>
+    <h:form>
+        <h:outputLabel for="nome" value="Nome:" />
+        <h:inputText id="nome" value="#{cadastroUsuariosBean.nome}" />
+
+        <h:commandButton value="Cadastrar" action="#{cadastroUsuariosBean.cadastrar}" />
+    </h:form>
+
+    <h2>Nomes Cadastrados:</h2>
+    <ul>
+        <ui:repeat value="#{cadastroUsuariosBean.nomesCadastrados}" var="nome">
+            <li>#{nome}</li>
+        </ui:repeat>
+    </ul>
+</h:body>
+
+</html>
